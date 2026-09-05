@@ -1,0 +1,13 @@
+@use "../abstracts/variables" as v;
+
+.service-card,
+.testimonial-card {
+  transition:
+    transform v.$transition,
+    box-shadow v.$transition;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: v.$shadow-md;
+}

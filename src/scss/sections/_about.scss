@@ -1,0 +1,160 @@
+@use "../abstracts/variables" as v;
+
+// =========================
+// ABOUT
+// =========================
+
+.about-section {
+  background-color: v.$white;
+}
+
+// =========================
+// CONTAINER
+// =========================
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 5rem;
+}
+
+// =========================
+// MEDIA
+// =========================
+
+.about-media {
+  margin: 0;
+
+  overflow: hidden;
+
+  border-radius: v.$radius-lg;
+
+  box-shadow: v.$shadow-md;
+
+  img {
+    display: block;
+
+    width: 100%;
+    height: 560px;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.02);
+  }
+}
+
+// =========================
+// CONTENT
+// =========================
+
+.about-content {
+  max-width: 600px;
+}
+
+.about-title {
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+
+  color: v.$text-dark;
+
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-weight: 700;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.03em;
+}
+
+.about-lead {
+  color: v.$text-dark;
+
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.about-content > p:not(.about-lead) {
+  margin-top: 1rem;
+
+  color: v.$text-muted;
+
+  line-height: 1.8;
+}
+
+// =========================
+// POINTS
+// =========================
+
+.about-points {
+  display: grid;
+
+  gap: 0.75rem;
+
+  margin-top: 1.75rem;
+  margin-bottom: 2rem;
+
+  p {
+    display: flex;
+    align-items: center;
+
+    gap: 0.75rem;
+
+    margin: 0;
+
+    color: v.$text-dark;
+
+    font-weight: 500;
+  }
+
+  i {
+    color: v.$primary;
+  }
+}
+
+// =========================
+// RESPONSIVE
+// =========================
+
+@media (max-width: 991.98px) {
+  .about-container {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+  }
+
+  .about-media {
+    img {
+      height: 480px;
+    }
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .about-container {
+    gap: 2.5rem;
+  }
+
+  .about-media {
+    img {
+      height: 380px;
+    }
+  }
+
+  .about-title {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+  }
+
+  .about-lead {
+    font-size: 1.05rem;
+  }
+}

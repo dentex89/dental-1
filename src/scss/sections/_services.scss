@@ -1,0 +1,210 @@
+@use "../abstracts/variables" as v;
+
+// =========================
+// SERVICES SECTION
+// =========================
+
+.services-section {
+  background-color: v.$white;
+}
+
+// =========================
+// HEADER
+// =========================
+
+.services-header {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+
+  align-items: end;
+
+  gap: 4rem;
+
+  margin-bottom: 3.5rem;
+}
+
+.services-title {
+  max-width: 650px;
+
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+
+  color: v.$text-dark;
+
+  font-size: clamp(2.7rem, 4vw, 3.9rem);
+  font-weight: 700;
+
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.services-intro {
+  max-width: 540px;
+
+  margin: 0;
+
+  color: v.$text-muted;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+// =========================
+// GRID
+// =========================
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1.5rem;
+}
+
+// =========================
+// CARD
+// =========================
+
+.service-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 330px;
+
+  padding: 2rem;
+
+  background-color: v.$light;
+
+  border: 1px solid transparent;
+  border-radius: v.$radius-lg;
+
+  transition:
+    transform v.$transition,
+    box-shadow v.$transition,
+    border-color v.$transition,
+    background-color v.$transition;
+
+  &:hover {
+    transform: translateY(-6px);
+
+    background-color: v.$white;
+
+    border-color: v.$border-color;
+
+    box-shadow: v.$shadow-md;
+  }
+
+  h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+
+    color: v.$text-dark;
+
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin-bottom: 1.75rem;
+
+    color: v.$text-muted;
+
+    line-height: 1.7;
+  }
+}
+
+// =========================
+// ICON
+// =========================
+
+.service-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: #e4f5f5;
+  color: v.$primary;
+
+  font-size: 1.5rem;
+}
+
+// =========================
+// LINK
+// =========================
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.5rem;
+
+  margin-top: auto;
+
+  color: v.$primary;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  i {
+    transition: transform v.$transition;
+  }
+
+  &:hover {
+    color: v.$primary-dark;
+
+    i {
+      transform: translateX(4px);
+    }
+  }
+}
+
+// =========================
+// TABLET
+// =========================
+
+@media (max-width: 991.98px) {
+  .services-header {
+    grid-template-columns: 1fr;
+
+    gap: 1.5rem;
+  }
+
+  .services-intro {
+    max-width: 700px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// =========================
+// MOBILE
+// =========================
+
+@media (max-width: 767.98px) {
+  .services-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .services-title {
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: auto;
+
+    padding: 1.75rem;
+  }
+}

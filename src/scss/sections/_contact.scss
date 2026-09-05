@@ -1,0 +1,303 @@
+@use "../abstracts/variables" as v;
+
+// =========================
+// CONTACT SECTION
+// =========================
+
+.contact-section {
+  background-color: v.$white;
+  padding-bottom: 70px;
+}
+
+// =========================
+// CONTAINER
+// =========================
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+
+  align-items: start;
+
+  gap: 5rem;
+}
+
+// =========================
+// CONTENT
+// =========================
+
+.contact-content {
+  max-width: 720px;
+}
+
+.contact-title {
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+
+  color: v.$text-dark;
+
+  font-size: clamp(2.7rem, 4vw, 3.9rem);
+  font-weight: 700;
+
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.contact-intro {
+  max-width: 620px;
+
+  margin-bottom: 2.25rem;
+
+  color: v.$text-muted;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+// =========================
+// FORM
+// =========================
+
+.contact-form {
+  display: grid;
+
+  gap: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: grid;
+
+  gap: 0.5rem;
+
+  label {
+    color: v.$text-dark;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+}
+
+.contact-form .form-control {
+  min-height: 54px;
+
+  padding: 0.85rem 1rem;
+
+  background-color: v.$light;
+
+  border: 1px solid v.$border-color;
+  border-radius: v.$radius-sm;
+
+  color: v.$text-dark;
+
+  &:focus {
+    background-color: v.$white;
+
+    border-color: v.$primary;
+
+    box-shadow: 0 0 0 0.2rem rgba(v.$primary, 0.1);
+  }
+
+  &::placeholder {
+    color: rgba(v.$text-muted, 0.7);
+  }
+}
+
+.contact-form textarea.form-control {
+  min-height: 150px;
+
+  resize: vertical;
+}
+
+.contact-form .btn {
+  justify-self: start;
+
+  margin-top: 0.5rem;
+
+  padding: 0.9rem 1.5rem;
+
+  border-radius: v.$radius-pill;
+}
+
+// =========================
+// CONTACT INFO
+// =========================
+
+.contact-info {
+  padding: 2.5rem;
+
+  background-color: v.$light;
+
+  border: 1px solid rgba(v.$primary, 0.06);
+  border-radius: v.$radius-lg;
+
+  box-shadow: v.$shadow-sm;
+}
+
+// =========================
+// INFO HEADER
+// =========================
+
+.contact-info-header {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+
+  padding-bottom: 1.75rem;
+
+  border-bottom: 1px solid v.$border-color;
+
+  span,
+  strong {
+    display: block;
+  }
+
+  div > span {
+    margin-bottom: 0.2rem;
+
+    color: v.$text-muted;
+
+    font-size: 0.85rem;
+  }
+
+  strong {
+    color: v.$text-dark;
+
+    font-size: 1.15rem;
+  }
+}
+
+.contact-info-icon {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background-color: #e4f5f5;
+  color: v.$primary;
+
+  font-size: 1.3rem;
+}
+
+// =========================
+// LIST
+// =========================
+
+.contact-list {
+  display: grid;
+
+  gap: 1.5rem;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 1rem;
+
+  strong {
+    display: block;
+
+    margin-bottom: 0.2rem;
+
+    color: v.$text-dark;
+
+    font-size: 0.95rem;
+  }
+
+  p {
+    margin: 0;
+
+    color: v.$text-muted;
+
+    line-height: 1.6;
+  }
+}
+
+.contact-item-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background-color: v.$white;
+  color: v.$primary;
+
+  font-size: 1rem;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+}
+
+// =========================
+// WHATSAPP
+// =========================
+
+.contact-whatsapp {
+  width: 100%;
+
+  padding: 0.9rem 1.25rem;
+
+  border-radius: v.$radius-pill;
+
+  font-weight: 600;
+}
+
+// =========================
+// TABLET
+// =========================
+
+@media (max-width: 991.98px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+  }
+
+  .contact-content {
+    max-width: 100%;
+  }
+}
+
+// =========================
+// MOBILE
+// =========================
+
+@media (max-width: 767.98px) {
+  .contact-title {
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form .btn {
+    width: 100%;
+  }
+
+  .contact-info {
+    padding: 1.75rem;
+  }
+}

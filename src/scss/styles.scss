@@ -1,0 +1,31 @@
+// Import all of Bootstrap’s CSS
+// @import "bootstrap/scss/bootstrap";
+@use "vendor/bootstrap";
+
+@use "abstracts/variables";
+@use "abstracts/mixins";
+@use "abstracts/functions";
+
+@use "base/reset";
+@use "base/typography";
+@use "base/utilities";
+
+@use "components/buttons";
+@use "components/cards";
+@use "components/forms";
+// @use "components/whatsapp";
+
+@use "layout/navbar";
+@use "layout/sections";
+@use "layout/footer";
+
+@use "sections/hero";
+@use "sections/trust";
+@use "sections/about";
+@use "sections/doctor";
+@use "sections/services";
+@use "sections/cta";
+@use "sections/clinic";
+@use "sections/testimonials";
+@use "sections/contact";
+@use "sections/map";

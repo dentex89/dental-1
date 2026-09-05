@@ -1,0 +1,217 @@
+@use "../abstracts/variables" as v;
+
+// =========================
+// TESTIMONIALS SECTION
+// =========================
+
+.testimonials-section {
+  background-color: v.$light;
+}
+
+// =========================
+// HEADER
+// =========================
+
+.testimonials-header {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+
+  align-items: end;
+
+  gap: 4rem;
+
+  margin-bottom: 3.5rem;
+}
+
+.testimonials-title {
+  max-width: 680px;
+
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+
+  color: v.$text-dark;
+
+  font-size: clamp(2.7rem, 4vw, 3.9rem);
+  font-weight: 700;
+
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.testimonials-intro {
+  max-width: 540px;
+
+  margin: 0;
+
+  color: v.$text-muted;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+// =========================
+// GRID
+// =========================
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1.5rem;
+}
+
+// =========================
+// CARD
+// =========================
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 330px;
+
+  padding: 2rem;
+
+  background-color: v.$white;
+
+  border: 1px solid rgba(v.$primary, 0.06);
+  border-radius: v.$radius-lg;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform v.$transition,
+    box-shadow v.$transition,
+    border-color v.$transition;
+
+  &:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(v.$primary, 0.14);
+
+    box-shadow: v.$shadow-md;
+  }
+
+  blockquote {
+    margin: 1.5rem 0 2rem;
+
+    color: v.$text-dark;
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+
+    quotes: none;
+  }
+}
+
+// =========================
+// STARS
+// =========================
+
+.testimonial-stars {
+  display: flex;
+
+  gap: 0.25rem;
+
+  color: #f2b84b;
+
+  font-size: 0.95rem;
+}
+
+// =========================
+// AUTHOR
+// =========================
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+
+  gap: 0.9rem;
+
+  margin-top: auto;
+
+  strong {
+    display: block;
+
+    color: v.$text-dark;
+
+    font-size: 0.95rem;
+  }
+
+  div > span {
+    display: block;
+
+    margin-top: 0.15rem;
+
+    color: v.$text-muted;
+
+    font-size: 0.85rem;
+  }
+}
+
+// =========================
+// AVATAR
+// =========================
+
+.testimonial-avatar {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background-color: #e4f5f5;
+  color: v.$primary;
+
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+// =========================
+// TABLET
+// =========================
+
+@media (max-width: 991.98px) {
+  .testimonials-header {
+    grid-template-columns: 1fr;
+
+    gap: 1.5rem;
+  }
+
+  .testimonials-intro {
+    max-width: 700px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// =========================
+// MOBILE
+// =========================
+
+@media (max-width: 767.98px) {
+  .testimonials-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .testimonials-title {
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-card {
+    min-height: auto;
+
+    padding: 1.75rem;
+  }
+}

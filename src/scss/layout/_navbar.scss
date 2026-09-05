@@ -1,0 +1,166 @@
+@use "../abstracts/variables" as v;
+
+// =========================
+// NAVBAR
+// =========================
+
+.custom-navbar {
+  min-height: v.$navbar-height;
+
+  background-color: rgba(v.$white, 0.96);
+
+  box-shadow: v.$shadow-sm;
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    background-color v.$transition,
+    box-shadow v.$transition;
+}
+
+// =========================
+// BRAND
+// =========================
+
+.navbar-brand {
+  color: v.$text-dark;
+
+  font-size: 1.35rem;
+  font-weight: 800;
+
+  letter-spacing: 0.05em;
+
+  &:hover,
+  &:focus {
+    color: v.$text-dark;
+  }
+}
+
+// =========================
+// NAVIGATION LINKS
+// =========================
+
+.custom-navbar .navbar-nav {
+  gap: 0.35rem;
+}
+
+.custom-navbar .nav-link {
+  position: relative;
+
+  padding: 0.75rem 0.8rem;
+
+  color: v.$text-muted;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  transition: color v.$transition;
+
+  &:hover,
+  &:focus {
+    color: v.$primary;
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0.8rem;
+    right: 0.8rem;
+    bottom: 0.45rem;
+
+    height: 2px;
+
+    background-color: v.$primary;
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform v.$transition;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    transform: scaleX(1);
+  }
+}
+
+// =========================
+// CTA
+// =========================
+
+.navbar-cta {
+  margin-left: 1rem;
+
+  padding: 0.7rem 1.25rem;
+
+  border-radius: v.$radius-sm;
+
+  white-space: nowrap;
+}
+
+// =========================
+// TOGGLER
+// =========================
+
+.navbar-toggler {
+  padding: 0.4rem 0.5rem;
+
+  border: 0;
+
+  box-shadow: none !important;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+// =========================
+// TABLET / MOBILE
+// =========================
+
+@media (max-width: 991.98px) {
+  .custom-navbar {
+    min-height: 72px;
+  }
+
+  .navbar-collapse {
+    margin-top: 0.75rem;
+
+    padding: 1rem 0 1.25rem;
+
+    border-top: 1px solid v.$border-color;
+  }
+
+  .custom-navbar .navbar-nav {
+    gap: 0;
+  }
+
+  .custom-navbar .nav-link {
+    padding: 0.75rem 0;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .navbar-cta {
+    display: inline-flex;
+
+    margin-top: 0.75rem;
+    margin-left: 0;
+  }
+}
+
+// =========================
+// MOBILE
+// =========================
+
+@media (max-width: 575.98px) {
+  .navbar-cta {
+    width: 100%;
+
+    justify-content: center;
+  }
+}

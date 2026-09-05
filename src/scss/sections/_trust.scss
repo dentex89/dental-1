@@ -1,0 +1,125 @@
+@use "../abstracts/variables" as v;
+
+// =========================
+// TRUST SECTION
+// =========================
+
+.trust-section {
+  position: relative;
+
+  margin-top: -55px;
+
+  z-index: 5;
+}
+
+// =========================
+// WRAPPER
+// =========================
+
+.trust-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  background-color: v.$white;
+
+  border-radius: v.$radius-md;
+
+  box-shadow: v.$shadow-md;
+
+  overflow: hidden;
+}
+
+// =========================
+// ITEM
+// =========================
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+
+  min-height: 110px;
+
+  padding: 1.5rem 2rem;
+
+  border-right: 1px solid v.$border-color;
+
+  &:last-child {
+    border-right: 0;
+  }
+
+  strong,
+  span {
+    display: block;
+  }
+
+  strong {
+    color: v.$text-dark;
+
+    font-size: 1.05rem;
+    font-weight: 700;
+
+    line-height: 1.2;
+  }
+
+  div > span {
+    margin-top: 0.25rem;
+
+    color: v.$text-muted;
+
+    font-size: 0.9rem;
+  }
+}
+
+// =========================
+// ICON
+// =========================
+
+.trust-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background-color: #eaf7f7;
+  color: v.$primary;
+
+  font-size: 1.3rem;
+}
+
+// =========================
+// RESPONSIVE
+// =========================
+
+@media (max-width: 767.98px) {
+  .trust-section {
+    margin-top: -30px;
+  }
+
+  .trust-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-item {
+    justify-content: flex-start;
+
+    min-height: auto;
+
+    padding: 1.25rem 1.5rem;
+
+    border-right: 0;
+    border-bottom: 1px solid v.$border-color;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}

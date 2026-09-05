@@ -1,0 +1,264 @@
+@use "../abstracts/variables" as v;
+
+// =========================
+// CLINIC SECTION
+// =========================
+
+.clinic-section {
+  background-color: v.$white;
+}
+
+// =========================
+// HEADER
+// =========================
+
+.clinic-header {
+  display: grid;
+  grid-template-columns: 1fr 0.75fr;
+
+  align-items: end;
+
+  gap: 4rem;
+
+  margin-bottom: 3.5rem;
+}
+
+.clinic-title {
+  max-width: 680px;
+
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+
+  color: v.$text-dark;
+
+  font-size: clamp(2.7rem, 4vw, 3.9rem);
+  font-weight: 700;
+
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.clinic-intro {
+  max-width: 520px;
+
+  margin: 0;
+
+  color: v.$text-muted;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+// =========================
+// CAROUSEL
+// =========================
+
+.clinic-carousel {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: v.$radius-lg;
+
+  box-shadow: v.$shadow-md;
+
+  .carousel-inner {
+    border-radius: inherit;
+  }
+
+  .carousel-item {
+    position: relative;
+  }
+
+  img {
+    width: 100%;
+    height: 620px;
+
+    object-fit: cover;
+  }
+}
+
+// =========================
+// IMAGE OVERLAY
+// =========================
+
+.clinic-carousel .carousel-item::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    transparent 55%,
+    rgba(8, 40, 48, 0.55) 100%
+  );
+
+  pointer-events: none;
+}
+
+// =========================
+// CAPTION
+// =========================
+
+.clinic-caption {
+  position: absolute;
+
+  left: 40px;
+  bottom: 40px;
+
+  z-index: 2;
+
+  color: v.$white;
+
+  span,
+  strong {
+    display: block;
+  }
+
+  span {
+    margin-bottom: 0.35rem;
+
+    color: #aee9e7;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  strong {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+// =========================
+// CONTROLS
+// =========================
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 90px;
+
+  opacity: 1;
+}
+
+.clinic-control {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: rgba(v.$white, 0.92);
+  color: v.$primary;
+
+  font-size: 1.2rem;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform v.$transition,
+    background-color v.$transition;
+
+  &:hover {
+    transform: scale(1.05);
+
+    background-color: v.$white;
+  }
+}
+
+// =========================
+// INDICATORS
+// =========================
+
+.clinic-carousel .carousel-indicators {
+  margin-bottom: 1.5rem;
+
+  button {
+    width: 8px;
+    height: 8px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background-color: v.$white;
+
+    opacity: 0.5;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+// =========================
+// TABLET
+// =========================
+
+@media (max-width: 991.98px) {
+  .clinic-header {
+    grid-template-columns: 1fr;
+
+    gap: 1.5rem;
+  }
+
+  .clinic-intro {
+    max-width: 700px;
+  }
+
+  .clinic-carousel {
+    img {
+      height: 520px;
+    }
+  }
+}
+
+// =========================
+// MOBILE
+// =========================
+
+@media (max-width: 767.98px) {
+  .clinic-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .clinic-title {
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
+  }
+
+  .clinic-carousel {
+    border-radius: v.$radius-md;
+
+    img {
+      height: 450px;
+    }
+  }
+
+  .clinic-caption {
+    left: 25px;
+    right: 25px;
+    bottom: 35px;
+
+    strong {
+      font-size: 1.2rem;
+    }
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 65px;
+  }
+
+  .clinic-control {
+    width: 42px;
+    height: 42px;
+
+    font-size: 1rem;
+  }
+}

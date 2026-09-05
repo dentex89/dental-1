@@ -1,0 +1,31 @@
+@use "../abstracts/variables" as v;
+
+.section-padding {
+  padding: v.$section-padding 0;
+}
+
+.section-label {
+  display: inline-block;
+
+  color: v.$primary;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.section-intro {
+  max-width: 700px;
+}
+
+section {
+  scroll-margin-top: v.$navbar-height;
+}
+
+@media (max-width: 767.98px) {
+  .section-padding {
+    padding: 70px 0;
+  }
+}

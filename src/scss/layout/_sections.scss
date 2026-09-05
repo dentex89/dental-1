@@ -1,0 +1,8 @@
+@use "../abstracts/variables" as v;
+
+.image-placeholder,
+.carousel-placeholder,
+.map-placeholder {
+  background-color: #e9ecef;
+  color: v.$text-muted;
+}

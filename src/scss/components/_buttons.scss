@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as v;
+
+.btn {
+  font-weight: 600;
+
+  transition:
+    color v.$transition,
+    background-color v.$transition,
+    border-color v.$transition,
+    transform v.$transition;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.btn-pill {
+  border-radius: v.$radius-pill;
+}
