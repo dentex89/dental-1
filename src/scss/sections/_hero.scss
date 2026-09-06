@@ -172,6 +172,21 @@
         rgba(8, 40, 48, 0.2) 80%
       );
     }
+    .hero-title {
+      max-width: 520px;
+      font-size: clamp(3rem, 6.5vw, 3.8rem);
+      line-height: 1.02;
+    }
+    .hero-actions {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+
+      .btn {
+        width: auto;
+      }
+    }
   }
 
   .hero-content {
@@ -222,11 +237,5 @@
 
   .hero-description {
     font-size: 1.05rem;
-  }
-
-  .hero-actions {
-    .btn {
-      width: 100%;
-    }
   }
 }

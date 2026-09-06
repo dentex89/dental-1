@@ -2,6 +2,7 @@ import { resolve } from "path";
 
 export default {
   root: resolve(__dirname, "src"),
+  base: "/dental-1/",
   build: {
     outDir: "../dist",
   },
