@@ -172,25 +172,26 @@
         rgba(8, 40, 48, 0.2) 80%
       );
     }
-    .hero-title {
-      max-width: 520px;
-      font-size: clamp(3rem, 6.5vw, 3.8rem);
-      line-height: 1.02;
-    }
-    .hero-actions {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 1rem;
-
-      .btn {
-        width: auto;
-      }
-    }
   }
 
   .hero-content {
     max-width: 560px;
+  }
+
+  .hero-title {
+    max-width: 520px;
+
+    font-size: clamp(3rem, 6.5vw, 3.8rem);
+    line-height: 1.02;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    align-items: center;
+
+    .btn {
+      width: auto;
+    }
   }
 }
 
@@ -232,7 +233,9 @@
   }
 
   .hero-title {
-    font-size: clamp(2.7rem, 12vw, 4rem);
+    max-width: 100%;
+
+    font-size: clamp(2.7rem, 8vw, 3.4rem);
   }
 
   .hero-description {
